@@ -159,6 +159,7 @@ void convert_snapshot_modifier(find* options, bsoncxx::document::element ele) {
 
 }  // namespace
 
+#include <bsoncxx/private/suppress_deprecation_warnings_begin.hh>
 find rewriter::rewrite_find_modifiers(const find& options) {
     if (!options.modifiers()) {
         return options;
@@ -202,6 +203,7 @@ find rewriter::rewrite_find_modifiers(const find& options) {
 
     return converted_options;
 }
+#include <bsoncxx/private/suppress_deprecation_warnings_end.hh>
 
 }  // namespace options
 MONGOCXX_INLINE_NAMESPACE_END

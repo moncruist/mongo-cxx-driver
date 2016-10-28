@@ -283,7 +283,7 @@ class MONGOCXX_API find {
     ///
     /// @see http://docs.mongodb.org/manual/reference/operator/query-modifier/
     ///
-    find& modifiers(bsoncxx::document::view_or_value modifiers);
+    MONGOCXX_DEPRECATED find& modifiers(bsoncxx::document::view_or_value modifiers);
 
     ///
     /// Gets the current query modifiers.
@@ -295,7 +295,7 @@ class MONGOCXX_API find {
     ///   that have been introduced. For example, users should call find::snapshot() instead of
     ///   calling find::modifiers() with a document containing a "$snapshot" field.
     ///
-    const stdx::optional<bsoncxx::document::view_or_value>& modifiers() const;
+    MONGOCXX_DEPRECATED const stdx::optional<bsoncxx::document::view_or_value>& modifiers() const;
 
     ///
     /// Sets the cursor flag to prevent cursor from timing out server-side due to a period of

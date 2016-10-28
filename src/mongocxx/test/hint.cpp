@@ -54,10 +54,12 @@ TEST_CASE("Hint", "[hint]") {
         }
 
         SECTION("Test for deprecated method to_document()") {
+#include <bsoncxx/private/suppress_deprecation_warnings_begin.hh>
             document::value filter = builder::stream::document{}
                                      << "a" << 15
                                      << builder::stream::concatenate(index_hint.to_document())
                                      << builder::stream::finalize;
+#include <bsoncxx/private/suppress_deprecation_warnings_end.hh>
             document::view view{filter.view()};
             document::element ele{view["$hint"]};
             REQUIRE(ele);
@@ -99,10 +101,12 @@ TEST_CASE("Hint", "[hint]") {
         }
 
         SECTION("Test for deprecated method to_document()") {
+#include <bsoncxx/private/suppress_deprecation_warnings_begin.hh>
             document::value filter = builder::stream::document{}
                                      << "a" << 12
                                      << builder::stream::concatenate(index_hint.to_document())
                                      << builder::stream::finalize;
+#include <bsoncxx/private/suppress_deprecation_warnings_end.hh>
             document::view view{filter.view()};
             document::element ele{view["$hint"]};
             REQUIRE(ele);

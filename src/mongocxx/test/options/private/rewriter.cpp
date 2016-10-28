@@ -26,6 +26,7 @@
 using namespace bsoncxx::builder::stream;
 using namespace mongocxx;
 
+#include <bsoncxx/private/suppress_deprecation_warnings_begin.hh>
 TEST_CASE("options::rewriter::rewrite_find_modifiers() with $comment", "[find][option]") {
     instance::current();
 
@@ -273,3 +274,4 @@ TEST_CASE("options::rewriter::rewrite_find_modifiers() with $snapshot", "[find][
                           logic_error);
     }
 }
+#include <bsoncxx/private/suppress_deprecation_warnings_end.hh>
