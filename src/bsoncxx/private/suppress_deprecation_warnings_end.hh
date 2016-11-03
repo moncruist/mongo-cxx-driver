@@ -15,14 +15,12 @@
 // See comment in suppress_deprecation_warnings_begin.hh for an explanation of the intended use of
 // this header file.
 
-#ifdef __GNUC__
-#pragma GCC diagnostic pop
-#endif
+#pragma pop_macro("BSONCXX_SUPPRESS_DEPRECATION_WARNINGS")
 
 #ifdef __clang__
 #pragma clang diagnostic pop
-#endif
-
-#ifdef _MSC_VER
+#elif defined __GNUC__
+#pragma GCC diagnostic pop
+#elif defined _MSC_VER
 #pragma warning(pop)
 #endif

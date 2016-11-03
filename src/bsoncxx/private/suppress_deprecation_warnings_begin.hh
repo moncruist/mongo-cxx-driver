@@ -23,18 +23,20 @@
 //     #include <path/to/suppress_deprecation_warnings_end.hh>
 //         some_other_function();
 //     }
+//
+// suppress_deprecation_warnings_end.hh can only be included if it follows an include of
+// suppress_deprecation_warnings_begin.hh. Otherwise, the pop_macro() pragma in the former file will
+// generate a warning.
 
-#ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
+#pragma push_macro("BSONCXX_SUPPRESS_DEPRECATION_WARNINGS")
 
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif
-
-#ifdef _MSC_VER
+#elif defined __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#elif defined _MSC_VER
 #pragma warning(push)
 #pragma warning(disable : 4996)
 #endif
