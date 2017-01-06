@@ -205,4 +205,4 @@ install(
   DESTINATION lib/cmake/libbsoncxx-${BSONCXX_VERSION}
 )
 
-add_subdirectory(test)
+#add_subdirectory(test)

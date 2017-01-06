@@ -137,7 +137,7 @@ add_custom_target(docs
 
 set(THIRD_PARTY_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/third_party)
 
-enable_testing()
+#enable_testing()
 
 add_subdirectory(src)
 

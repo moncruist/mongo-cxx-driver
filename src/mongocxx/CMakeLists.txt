@@ -216,4 +216,4 @@ install(
   DESTINATION lib/cmake/libmongocxx-${MONGOCXX_VERSION}
 )
 
-add_subdirectory(test)
+#add_subdirectory(test)
